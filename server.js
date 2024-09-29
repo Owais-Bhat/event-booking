@@ -4,11 +4,11 @@ const cors = require("cors");
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// Middleware
+
 app.use(cors());
 app.use(express.json());
 
-// Sample event data
+\
 const events = [
   {
     id: 1,
@@ -113,7 +113,7 @@ const events = [
   },
 ];
 
-// Routes
+
 app.get("/events", (req, res) => {
   res.json(events);
 });
@@ -134,14 +134,14 @@ app.get("/events/search", (req, res) => {
   res.json(filteredEvents);
 });
 
-// Example of filtering by date
+
 app.get("/events/filter", (req, res) => {
   const { date } = req.query;
   const filteredEvents = events.filter((event) => event.date === date);
   res.json(filteredEvents);
 });
 
-// Start the server
+
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
